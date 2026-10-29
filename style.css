@@ -1,0 +1,166 @@
+/* ===================================================================
+   style.css
+   Styles for my About Me page.
+
+   CSS custom properties ("variables") are defined once here and reused
+   everywhere below. Change a value here and it updates the whole page.
+   =================================================================== */
+
+:root {
+  --accent:      #e63946;   /* red: lines, borders, pills */
+  --accent-dark: #b3172c;   /* darker red: hover state */
+  --ink:         #ffffff;   /* body text */
+  --ink-muted:   #ffffff;   /* secondary text */
+  --paper:       #000000;   /* page background */
+  --card:        #0d0d0d;   /* card background */
+  --line:        #b3172c;   /* borders */
+  --radius:      10px;
+  color-scheme: dark;
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+/* text-align: center centers all the text on the page. */
+body {
+  margin: 0;
+  padding: 2rem 1.25rem 3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--ink);
+  background-color: var(--paper);
+}
+
+/* Keep the content from stretching too wide on large monitors. */
+header,
+main,
+footer {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, h2 {
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+/* A big serif name, so it stands out from the Arial-style text. */
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+/* A short red line above each section heading. */
+h2::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 0 auto 0.9rem;
+}
+
+/* ------------------------------------------------------------------
+   Header and footer
+   ------------------------------------------------------------------ */
+
+.site-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid var(--accent);
+}
+
+.subtitle {
+  color: var(--ink-muted);
+  margin-bottom: 0;
+}
+
+.site-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------------
+   Cards
+   ------------------------------------------------------------------ */
+
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------------
+   Tools: one red pill for each program
+   ------------------------------------------------------------------ */
+
+.tools {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.tools li {
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.5rem 1.4rem;
+}
+
+.tools li:hover {
+  background-color: var(--accent-dark);
+}
+
+/* ------------------------------------------------------------------
+   Chart image
+   width: 100% makes the picture fit the card on any screen size.
+   ------------------------------------------------------------------ */
+
+.chart-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 6px;
+}
+
+/* ------------------------------------------------------------------
+   Small screens
+   ------------------------------------------------------------------ */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
